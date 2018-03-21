@@ -1,0 +1,11 @@
+[Unit]
+Description=wait-then-redirect
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c "/opt/wait-then-redirect/bin/cmd.sh start"
+ExecStop=/bin/bash -c "/opt/wait-then-redirect/bin/cmd.sh stop"
+
+[Install]
+WantedBy=multi-user.target
